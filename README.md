@@ -1,11 +1,6 @@
 <h1 align="center">
   AudioShift
 </h1>
-
-<p align="center">
-  <img src="../FFmpeg-Converter-Audio/images/audioshift interface.png" alt="AudioShift Banner">
-</p>
-
   <strong>Uma aplicação de desktop robusta e de alta performance para conversão de áudio em lote.</strong>
   Construída com Python e FFmpeg, sua arquitetura paralela foi projetada para extrair o máximo de desempenho de CPUs modernas, oferecendo uma experiência de usuário fluida, intuitiva e multilíngue.
 
@@ -13,6 +8,10 @@
   <img alt="Licença MIT" src="https://img.shields.io/badge/license-MIT-blue.svg">
   <img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg">
   <img alt="Plataforma" src="https://img.shields.io/badge/platform-Windows-lightgrey.svg">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/guilhermepallma/FFmpeg-Converter-Audio/refs/heads/main/images/audioshift%20interface.png" alt="AudioShift Banner">
 </p>
 
 ---
