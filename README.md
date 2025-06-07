@@ -135,10 +135,7 @@ Para empacotar a aplicação em um único arquivo `.exe` autocontido (incluindo 
     Navegue até o diretório raiz do projeto (`FFmpeg-Converter-Audio/`) e execute o comando abaixo no terminal. Ele instrui o PyInstaller a criar um único arquivo executável, sem janela de console, e a incluir os binários do FFmpeg.
 
     ```bash
-    pyinstaller --noconfirm --onefile --windowed --name AudioShift ^
-    --add-binary="audio_converter/ffmpeg/ffmpeg.exe;ffmpeg" ^
-    --add-binary="audio_converter/ffmpeg/ffprobe.exe;ffmpeg" ^
-    audio_converter/gui.py
+     pyinstaller --noconfirm --onefile --windowed --add-binary="ffmpeg/ffmpeg.exe;ffmpeg" --add-binary="ffmpeg/ffprobe.exe;ffmpeg" gui.py
     ```
     * `--onefile`: Cria um único executável.
     * `--windowed`: Remove a janela do console ao executar.
