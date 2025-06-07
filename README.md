@@ -4,6 +4,8 @@
   <strong>Uma aplicação de desktop robusta e de alta performance para conversão de áudio em lote.</strong>
   Construída com Python e FFmpeg, sua arquitetura paralela foi projetada para extrair o máximo de desempenho de CPUs modernas, oferecendo uma experiência de usuário fluida, intuitiva e multilíngue.
 
+<p></p>
+
 <p align="center">
   <img alt="Licença MIT" src="https://img.shields.io/badge/license-MIT-blue.svg">
   <img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg">
@@ -144,16 +146,10 @@ Para empacotar a aplicação em um único arquivo `.exe` autocontido (incluindo 
 
 3.  **Encontre o Executável**
     O seu programa final, `AudioShift.exe`, estará dentro da pasta `dist/` recém-criada.
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a **Licença MIT**. Veja o arquivo `LICENSE` para mais detalhes.
-
+    
 ---
 
 ## 🙏 Agradecimentos
 
-* À equipe do **FFmpeg** por criar e manter uma ferramenta de multimídia tão poderosa e versátil.
+* A equipe do **[FFmpeg](https://github.com/FFmpeg/FFmpeg)** por criar e manter uma ferramenta de multimídia tão poderosa e versátil.
 * A todos os contribuidores e à comunidade de código aberto.
