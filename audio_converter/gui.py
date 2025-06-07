@@ -54,9 +54,7 @@ class AudioConverterApp:
 
     def center_toplevel(self, toplevel_window):
         """ Centraliza a janela Toplevel de forma robusta. """
-        # Oculta a janela temporariamente para evitar "piscar" na tela
         toplevel_window.withdraw()
-        # Força o Toplevel a calcular seu tamanho real
         toplevel_window.update_idletasks() 
         
         main_x = self.master.winfo_x()
@@ -71,8 +69,6 @@ class AudioConverterApp:
         new_y = main_y + (main_height // 2) - (toplevel_height // 2)
 
         toplevel_window.geometry(f"+{new_x}+{new_y}")
-        
-        # Torna a janela visível na posição correta
         toplevel_window.deiconify()
 
     def start_conversion_thread(self):
@@ -159,6 +155,14 @@ class AudioConverterApp:
 
     def update_options_ui(self, *args):
         for widget in self.options_frame.winfo_children(): widget.destroy()
+        
+        # --- LINHAS ADICIONADAS PARA CORRIGIR O BUG ---
+        # Reseta as variáveis de estado para evitar que valores antigos persistam
+        self.bitrate_var.set("")
+        self.samplerate_var.set("")
+        self.bitdepth_var.set("")
+        # --- FIM DA CORREÇÃO ---
+
         if self.format_var.get() in ['MP3', 'AAC']:
             self.stream_copy_checkbox.config(state=tk.DISABLED)
             self.stream_copy_var.set(False)
@@ -190,6 +194,7 @@ class AudioConverterApp:
     def create_widgets(self):
         self.menu_bar.entryconfig(1, label=self._("menu_language"))
         self.format_var = tk.StringVar(value='MP3')
+        self.format_var.trace_add("write", self.update_options_ui) # Adicionado para rastrear mudanças
         self.stream_copy_var = tk.BooleanVar(value=False)
         self.output_dir_path = tk.StringVar()
         self.output_folder_name_var = tk.StringVar()
@@ -249,6 +254,8 @@ class AudioConverterApp:
             self.stream_copy_checkbox, self.options_frame, self.output_path_entry, self.browse_button,
             self.output_folder_entry, self.convert_button
         ]
+        
+        self.update_options_ui() # Chamada inicial para configurar a UI
     
 if __name__ == "__main__":
     root = tk.Tk()
